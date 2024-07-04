@@ -2,3 +2,15 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/*Centraliza  o container*/
+.container {
+    display: flex;
+    width:  100%;
+    justify-content: center;
+}
+/*Centraliza o conteúdo do container*/
+.content-container {
+    max-width: 748px;
+    width: 100%;
+}
