@@ -31,9 +31,11 @@ export class EditComponent {
       validators: Validators.required,
     }),
   });
+
   onSubmit() {
-    this.productsService.put(this.product.id,
-       { title: this.form.controls.title.value, })
+    this.productsService
+      .put(this.product.id,
+        { title: this.form.controls.title.value, })
 
       .subscribe(() => {
         this.matSnackBar.open('Produto editado com sucesso!', 'Ok',);
