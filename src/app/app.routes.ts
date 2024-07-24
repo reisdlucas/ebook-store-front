@@ -1,6 +1,5 @@
 import { ActivatedRouteSnapshot, RouterStateSnapshot, Routes } from '@angular/router';
 import { ListComponent } from './feature/list/list.component'
-import { CreateComponent } from './features/create/create.component';
 import { inject } from '@angular/core';
 import { ProductsService } from './shared/services/products.service';
 
