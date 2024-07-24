@@ -1,7 +1,7 @@
 {
   "products": [
     {
-      "title": "Produto de testes",
+      "title": "Produtos de teste",
       "id": "1"
     },
     {
@@ -63,6 +63,18 @@
     {
       "id": "8a3c",
       "title": "bibico"
+    },
+    {
+      "id": "d047",
+      "title": "fone"
+    },
+    {
+      "isTrusted": true,
+      "id": "ea95"
+    },
+    {
+      "id": "0e2b",
+      "title": "Caderno"
     }
   ]
 }
