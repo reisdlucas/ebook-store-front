@@ -1,80 +1,16 @@
 {
   "products": [
     {
-      "title": "Produtos de teste",
-      "id": "1"
-    },
-    {
-      "id": "9841",
-      "title": "celular"
-    },
-    {
-      "id": "cd92",
-      "title": "caneta"
-    },
-    {
-      "id": "0bf1",
-      "title": "Copo"
-    },
-    {
-      "id": "e8ec",
-      "title": "Talher"
-    },
-    {
-      "id": "7e29",
-      "title": "Camisa"
-    },
-    {
-      "id": "a3f4",
+      "id": "2ba3",
       "title": "Monitor"
     },
     {
-      "id": "4a06",
-      "title": "Lixeira"
+      "id": "1187",
+      "title": "Teclado"
     },
     {
-      "id": "d139",
-      "title": "Chave"
-    },
-    {
-      "id": "3694",
-      "title": "Computador"
-    },
-    {
-      "id": "de55",
-      "title": "Moletom"
-    },
-    {
-      "id": "f4fd",
-      "title": "Casaco"
-    },
-    {
-      "id": "f147",
-      "title": "Quadro"
-    },
-    {
-      "id": "aaeb",
-      "title": "Canicula"
-    },
-    {
-      "id": "1c78",
-      "title": "gandola"
-    },
-    {
-      "id": "8a3c",
-      "title": "bibico"
-    },
-    {
-      "id": "d047",
-      "title": "fone"
-    },
-    {
-      "isTrusted": true,
-      "id": "ea95"
-    },
-    {
-      "id": "0e2b",
-      "title": "Caderno"
+      "id": "002e",
+      "title": "Mouse"
     }
   ]
 }
