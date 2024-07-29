@@ -4,36 +4,9 @@ import { Product } from '../../shared/interfaces/product.interface';
 import { CardComponent } from '../../features/list/components/card/card.component';
 import { Router, RouterLink } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
-import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { filter } from 'rxjs';
-
-@Component({
-  selector: 'app-confirmation-dialog',
-  template: `
-  <h2 mat-dialog-title>Deletar produto</h2>
-  <mat-dialog-content>
-    Tem certeza que deseja deletar esse produto?
-</mat-dialog-content>
-<mat-dialog-actions>
-  <button mat-button (click)="onNo()">Não</button>
-  <button mat-button (click)="onYes()" cdkFocusInitial>Sim</button>
-</mat-dialog-actions>
-  `,
-  standalone: true,
-  imports: [MatButtonModule, MatDialogModule],
-})
-
-export class ConfirmationDialogComponent { 
-  matDialogRef = inject(MatDialogRef);
-
-  onNo() {
-    this.matDialogRef.close(false);
-  }
-
-  onYes() {
-    this.matDialogRef.close(true);    
-  }
-}
+import { ConfirmationDialogService, ConfirmationDialogComponent } from '../../shared/services/confirmation-dialog.service';
 
 @Component({
   selector: 'app-list',
@@ -48,6 +21,7 @@ export class ListComponent {
   productsService = inject(ProductsService);
   router = inject(Router);
   matDialog = inject(MatDialog);
+  confirmationDialogService = inject(ConfirmationDialogService);
 
   ngOnInit() {
     this.productsService.getAll().subscribe((products) => {
@@ -60,15 +34,15 @@ export class ListComponent {
   }
 
   onDelete(product: Product) {
-    this.matDialog.open(ConfirmationDialogComponent)
-    .afterClosed()
-    .pipe(filter((answer) => answer === true))
-    .subscribe((answer: boolean) => {
-      this.productsService.delete(product.id).subscribe(() => {
-        this.productsService.getAll().subscribe((products) => {
-          this.products = products;
+    this.confirmationDialogService
+      .openDialog()
+      .pipe(filter((answer) => answer === true))
+      .subscribe(() => {
+        this.productsService.delete(product.id).subscribe(() => {
+          this.productsService.getAll().subscribe((products) => {
+            this.products = products;
+          });
         });
       });
-    });
   }
 }
