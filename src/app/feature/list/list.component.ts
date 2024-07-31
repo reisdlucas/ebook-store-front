@@ -17,10 +17,7 @@ import { NoItensComponent } from '../../features/list/components/no-itens/no-ite
   styleUrl: './list.component.scss'
 })
 export class ListComponent {
-  products = signal<Product[]>(
-    //inject(ActivatedRoute).snapshot.data['products']
-    [],
-  );
+  products = signal<Product[]>(inject(ActivatedRoute).snapshot.data['products']);
 
   productsService = inject(ProductsService);
   router = inject(Router);
