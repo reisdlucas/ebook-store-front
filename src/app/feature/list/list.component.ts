@@ -7,16 +7,20 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
 import { filter } from 'rxjs';
 import { ConfirmationDialogService } from '../../shared/services/confirmation-dialog.service';
+import { NoItensComponent } from '../../features/list/components/no-itens/no-itens.component';
 
 @Component({
   selector: 'app-list',
   standalone: true,
-  imports: [CardComponent, RouterLink, MatButtonModule],
+  imports: [CardComponent, RouterLink, MatButtonModule, NoItensComponent],
   templateUrl: './list.component.html',
   styleUrl: './list.component.scss'
 })
 export class ListComponent {
-  products = signal<Product[]>(inject(ActivatedRoute).snapshot.data['products']);
+  products = signal<Product[]>(
+    //inject(ActivatedRoute).snapshot.data['products']
+    [],
+  );
 
   productsService = inject(ProductsService);
   router = inject(Router);
