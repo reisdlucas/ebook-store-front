@@ -1,16 +1,20 @@
 {
   "products": [
     {
-      "id": "2ba3",
+      "id": "64f3",
       "title": "Monitor"
     },
     {
-      "id": "1187",
+      "id": "c43e",
       "title": "Teclado"
     },
     {
-      "title": "Mouse",
-      "id": "9db3"
+      "id": "3555",
+      "title": "Mouse"
+    },
+    {
+      "id": "f660",
+      "title": "Estabilizador"
     }
   ]
 }
